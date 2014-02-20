@@ -41,4 +41,4 @@ Most likely you haven't run the bbndk.sh Skript (does that even exist for Window
 ```
 **You:** What went wrong?
 
-**Answer:** Notice how cmake is looking for qcc in `/usr/bin`? You didn't set `QNX_TARGET`, the script tells cmake that qcc is in `${QNX_TARGET}/usr/bin`. I recommend using the `bbndk-evn_xx_x_x_xxxx.sh` script to properly set your environment variables.
+**Answer:** Notice how cmake is looking for qcc in `/usr/bin`? You didn't set `QNX_TARGET`, the script tells cmake that qcc is in `${QNX_TARGET}/usr/bin`. I recommend using the `bbndk-env_xx_x_x_xxxx.sh` script to properly set your environment variables.
