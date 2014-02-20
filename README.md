@@ -25,3 +25,19 @@ Then generate a new one. Just execute `./lib_extractor.rb Path/To/My/blackberry-
 
 ### find_package(BB REQUIRED bbsystem ...) doesn't find anything, what now?
 Most likely you haven't run the bbndk.sh Skript (does that even exist for Windows users?), i.e. you QNX_TARGET environment variable isn't set. If that's not the root of your troubles, check whether the BBLibraryInfo.cmake file is wrong and if so, generate a new one.
+
+#### Common Pitfalls
+**You:** When I invoke cmake, I get this output:
+```
+  -- The C compiler identification is unknown
+  -- The CXX compiler identification is unknown
+  -- Could not determine Eclipse version, assuming at least 3.6 (Helios). Adjust CMAKE_ECLIPSE_VERSION if this is wrong.
+  -- Check for working C compiler: /usr/bin/qcc
+  CMake Error: your C compiler: "/usr/bin/qcc" was not found.   Please set CMAKE_C_COMPILER to a valid compiler path or name.
+  CMake Error: Internal CMake error, TryCompile configure of cmake failed
+  -- Check for working C compiler: /usr/bin/qcc -- broken
+  CMake Error at /usr/local/Cellar/cmake/2.8.12.1/share/cmake/Modules/CMakeTestCCompiler.cmake:61 (message):
+    The C compiler "/usr/bin/qcc" is not able to compile a simple test program.
+```
+**You:** What went wrong?
+**Answer:** Notice how cmake is looking for qcc in `/usr/bin`? You didn't set `QNX_TARGET`, the script tells cmake that qcc is in `${QNX_TARGET}/usr/bin`. I recommend using the `bbndk-evn_xx_x_x_xxxx.sh` script to properly set your environment variables.
