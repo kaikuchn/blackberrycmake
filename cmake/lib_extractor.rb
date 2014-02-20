@@ -1,8 +1,12 @@
+#!/usr/bin/env ruby
+
 require 'nokogiri'
 
-raise unless File.exists? '/Applications/Momentics.app/target_10_2_0_1155/blackberry-sdk-descriptor.xml'
+file_path = ARGV.first || '/Applications/Momentics.app/target_10_2_0_1155/blackberry-sdk-descriptor.xml'
 
-doc = Nokogiri::XML(File.open('/Applications/Momentics.app/target_10_2_0_1155/blackberry-sdk-descriptor.xml'))
+raise "File not found!" unless File.exists? file_path
+
+doc = Nokogiri::XML(File.open(file_path))
 open('BBLibraryInfo.cmake', 'w+') do |file|
 	file.puts(
 		%Q{# This file is generated via the lib_extractor.rb script.
