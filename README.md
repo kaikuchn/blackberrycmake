@@ -9,7 +9,7 @@ Take a look into the blackberry.toolchain.cmake file on how to invoke cmake.
 **I did not write all of this!** And worse yet, I don't know who wrote what. I was just kindly pointed to [this repository](https://github.com/Bjoe/QMetaWatchProtocol) by Bjoe as a starting point on how to use CMake for BB10 projects. All I did is change it a little and add a generic find-package command for all BB 10 NDK libs. I didn't even read all of the cmake files ... So if you discover that some of this code is yours, please contact me I will of course mention that! I hope I don't get bad juju by using this without knowing who wrote what.
 
 ### How do I invoke cmake?
-Try this `cmake .. -DCMAKE_TOOLCHAIN_FILE="../cmake/toolchain/blackberry.toolchain.cmake" -DBLACKBERRY_ARCHITECTURE=arm -DCMAKE_VERBOSE_MAKEFILE=TRUE -G "Eclipse CDT4 - Unix Makefiles"`. You should really remove/add flags as you see fit.
+Try this `cmake .. -DCMAKE_TOOLCHAIN_FILE="../cmake/blackberry.toolchain.cmake" -DBLACKBERRY_ARCHITECTURE=arm -DCMAKE_VERBOSE_MAKEFILE=TRUE -G "Eclipse CDT4 - Unix Makefiles"`. You should really remove/add flags as you see fit.
 
 ### Your CMake is awful
 I know, and I'm sorry. :(   

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.11)
 
-project(PROJECT)
+project(Project)
 
 SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" CACHE PATH "cmake modul path") 
 
@@ -19,7 +19,7 @@ set(INSTALL_INCLUDE_DIR include CACHE PATH "Installation directory for header fi
 if(WIN32 AND NOT CYGWIN)
   set(DEF_INSTALL_CMAKE_DIR CMake)
 else()
-  set(DEF_INSTALL_CMAKE_DIR lib/CMake/PROJECT)
+  set(DEF_INSTALL_CMAKE_DIR lib/CMake/Project)
 endif()
 set(INSTALL_CMAKE_DIR ${DEF_INSTALL_CMAKE_DIR} CACHE PATH "Installation directory for CMake files")
 
@@ -71,12 +71,12 @@ endif(${Qt4})
 add_subdirectory(src)
 
 # Add all targets to the build-tree export set
-export(TARGETS PROJECT
-  FILE "${PROJECT_BINARY_DIR}/PROJECTTargets.cmake")
+export(TARGETS project
+  FILE "${PROJECT_BINARY_DIR}/ProjectTargets.cmake")
 
 # Export the package for use from the build-tree
 # (this registers the build-tree with a global CMake-registry)
-export(PACKAGE PROJECT)
+export(PACKAGE Project)
 
 
 
@@ -90,8 +90,8 @@ set(CONF_INCLUDE_DIRS
   "${PROJECT_BINARY_DIR}"
 )
 configure_file(
-  "PROJECTConfig.cmake.in"
-  "${PROJECT_BINARY_DIR}/PROJECTConfig.cmake" @ONLY
+  "ProjectConfig.cmake.in"
+  "${PROJECT_BINARY_DIR}/ProjectConfig.cmake" @ONLY
 )
 
 #-----------------------------------------------------------------
@@ -104,25 +104,25 @@ set(CONF_INCLUDE_DIRS
   "\${PROJECT_CMAKE_DIR}/${REL_INCLUDE_DIR}"
 )
 configure_file(
-  "PROJECTConfig.cmake.in"
-  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/PROJECTConfig.cmake" @ONLY
+  "ProjectConfig.cmake.in"
+  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/ProjectConfig.cmake" @ONLY
 )
 
 #-----------------------------------------------------------------
 # ... for both
 configure_file(
-  "PROJECTConfigVersion.cmake.in"
-  "${PROJECT_BINARY_DIR}/PROJECTConfigVersion.cmake" @ONLY
+  "ProjectConfigVersion.cmake.in"
+  "${PROJECT_BINARY_DIR}/ProjectConfigVersion.cmake" @ONLY
 )
  
 
 ##################################################################
 # Install the xxxxxxConfig.cmake and xxxxxxConfigVersion.cmake
 install(FILES
-  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/PROJECTConfig.cmake"
-  "${PROJECT_BINARY_DIR}/PROJECTConfigVersion.cmake"
+  "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/ProjectConfig.cmake"
+  "${PROJECT_BINARY_DIR}/ProjectConfigVersion.cmake"
   DESTINATION "${INSTALL_CMAKE_DIR}" COMPONENT dev)
  
 # Install the export set for use with the install-tree
-install(EXPORT PROJECTTargets DESTINATION
+install(EXPORT ProjectTargets DESTINATION
   "${INSTALL_CMAKE_DIR}" COMPONENT dev)

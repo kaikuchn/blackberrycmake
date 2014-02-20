@@ -6,7 +6,7 @@
 #   $ source /absolute/path/to/the/bbndk/bbndk-env.sh
 #   $ mkdir build
 #   $ cd build
-#   $ cmake .. -DCMAKE_TOOLCHAIN_FILE="../cmake/toolchain/blackberry.toolchain.cmake" -DBLACKBERRY_ARCHITECTURE=arm -G "Eclipse CDT4 - Unix Makefiles"
+#   $ cmake .. -DCMAKE_TOOLCHAIN_FILE="../cmake/blackberry.toolchain.cmake" -DBLACKBERRY_ARCHITECTURE=arm -G "Eclipse CDT4 - Unix Makefiles"
 #   $ make -j8
 #
 # -DTargetPlatform="BlackBerry" 
