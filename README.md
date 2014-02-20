@@ -40,4 +40,5 @@ Most likely you haven't run the bbndk.sh Skript (does that even exist for Window
     The C compiler "/usr/bin/qcc" is not able to compile a simple test program.
 ```
 **You:** What went wrong?
+
 **Answer:** Notice how cmake is looking for qcc in `/usr/bin`? You didn't set `QNX_TARGET`, the script tells cmake that qcc is in `${QNX_TARGET}/usr/bin`. I recommend using the `bbndk-evn_xx_x_x_xxxx.sh` script to properly set your environment variables.
