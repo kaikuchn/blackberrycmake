@@ -13,7 +13,7 @@ Try this `cmake .. -DCMAKE_TOOLCHAIN_FILE="../cmake/blackberry.toolchain.cmake" 
 
 ### Your CMake is awful
 I know, and I'm sorry. :(   
-I have little experience with CMake. I usually set it up once and then just use it. Or more often I hope somebody else already did it for me.
+I have little experience with CMake. I usually set it up once and then just use it. Or more often I hope somebody else already did it for me. (Also, as mentioned before: most of this was not written by me, so maybe it's someone else's CMake that you find lacking, HA!)
 
 If you can improve on it, please do so! Just **fork it & send me a pull request**. There's probably a lot one can clean up and I will try to do some cleaning myself. For now, however, I'm just glad that it works. :)
 
